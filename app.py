@@ -10,7 +10,6 @@ def home():
     return "welcome"
 
 
-#@app.route('/predict', methods=['POST'])
 def predict(temperature,pressure,wind_speed,wind_direction):
     values=np.array([[temperature,pressure,wind_speed,wind_direction]])
     prediction=old_models.predict(values.reshape(-1,1,4), batch_size=1)
@@ -33,8 +32,6 @@ def main():
         result = predict(temperature,pressure,wind_speed,wind_direction)
     st.success('Predicted Power is {}'.format(result))
 
-
-#@app.route('/')
 
 
 if __name__ == "__main__":
