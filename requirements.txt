@@ -1,5 +1,4 @@
-tensorflow
-keas
-streamlit
-numpy
 pandas
+streamlit
+keras
+tensorflow
