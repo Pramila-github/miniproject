@@ -4,13 +4,12 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
-import glob
 import pandas as pd
-import pickle
-#import keras
+import tensorflow
+import keras
 
 ''' Loading data '''
-df = pd.read_csv('C:/Users/PRAMILA/.spyder-py3/project/lstm.csv')
+df = pd.read_csv('lstm.csv')
 df.head()
 
 ''' Cleaning Data '''
@@ -37,7 +36,7 @@ model.fit(X, Y,epochs=100,callbacks=[keras.callbacks.EarlyStopping(patience=3)])
 
 test_data = np.array([[-4.858,0.989741,6.651,273]])
 o=model.predict(test_data.reshape(-1,1,4), batch_size=1)
-print(o)
+
 
 # Saving model to disk
 models=model.save('model.h5')
