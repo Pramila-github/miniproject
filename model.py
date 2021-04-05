@@ -1,9 +1,6 @@
 import pandas as pd
-import datetime
 import numpy as np
 import pandas as pd
-import tensorflow
-import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
