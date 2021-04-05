@@ -28,7 +28,7 @@ def main():
     wind_speed = st.sidebar.slider('Wind Speed  🌬️ [m/s]', 1, 1, 27)
     wind_direction = st.sidebar.slider('Wind Direction  🚩🌀 [deg]', 0, 1, 360)
     result = ""
-    if st.button(""):
+    if st.button("Predict"):
         result = predict(temperature,pressure,wind_speed,wind_direction)
     st.success('Predicted Power is {}'.format(result))
 
