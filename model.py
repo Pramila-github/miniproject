@@ -1,12 +1,13 @@
 import pandas as pd
 import datetime
 import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
 import pandas as pd
 import tensorflow
 import keras
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.layers import Bidirectional
 
 ''' Loading data '''
 df = pd.read_csv('lstm.csv')
@@ -24,10 +25,6 @@ X=np.array(X).reshape(-1,1,4)
 Y=np.array(Y).reshape(-1,1,1)
 
 
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.layers import Bidirectional
 model = Sequential()
 model.add(Bidirectional(LSTM(150, activation='relu',input_shape=(-1,1,4))))
 model.add(Dense(1))
