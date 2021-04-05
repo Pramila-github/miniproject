@@ -1,10 +1,9 @@
 import numpy as np
 import streamlit as st
 import pandas as pd
-import tensorflow
-import keras
+import tensorflow as tf
 
-old_models = keras.models.load_model('model.h5')
+old_models = tf.keras.models.load_model('model.h5')
 
 def home():
     return "welcome"
