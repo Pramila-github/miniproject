@@ -41,7 +41,7 @@ def main():
     result = ""
     if st.button("Predict"):
         result = predict(temperature,pressure,wind_speed,wind_direction)
-    st.success('Predicted Power is {}'.format(result))
+    st.success('Predicted Power is {} kW'.format(result))
     
     st.subheader("⚡FORECASTING⚡")
 
