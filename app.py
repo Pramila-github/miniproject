@@ -4,6 +4,8 @@ import streamlit as st
 import pandas as pd
 import datetime
 import keras
+import plotly
+import xlrd
 
 
 st.set_page_config(
