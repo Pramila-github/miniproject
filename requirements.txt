@@ -6,3 +6,4 @@ xlrd
 openpyxl
 plotly
 matplotlib
+sklearn
