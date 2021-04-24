@@ -4,5 +4,5 @@ keras
 tensorflow
 xlrd
 openpyxl
-plotly
+plotly.go
 mathplotlib
