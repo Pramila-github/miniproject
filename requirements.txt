@@ -3,3 +3,6 @@ streamlit
 keras
 tensorflow
 xlrd
+openpyxl
+plotly
+mathplotlib
