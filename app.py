@@ -159,7 +159,7 @@ def main():
        testPredictPlot[:, :] = numpy.nan
        testPredictPlot[len(train_predict)+(look_back*2)+1:len(df1)-1, :] = test_predict
 # plot baseline and predictions
-       st.write("----------------------------------------📈 TRAIN AND TEST DATA 📈 --------------------------------------")
+       st.write("------------------------------------📈 TRAIN AND TEST DATA 📈 --------------------------------------")
        #plt.plot(scaler.inverse_transform(df1))
        plt.plot(scaler.inverse_transform(df1), color="blue", linewidth=1, linestyle="-")
        plt.xlabel('No. of hours')
