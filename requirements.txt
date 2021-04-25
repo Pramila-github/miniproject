@@ -6,4 +6,5 @@ xlrd
 openpyxl
 plotly
 matplotlib
+base64
 sklearn
