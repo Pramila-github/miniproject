@@ -55,7 +55,7 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     return prediction
 
 def main():
-    set_png_as_page_bg('windmill.gif')
+    set_png_as_page_bg('000a.PNG')
     st.sidebar.header('User Input Parameters 💻️')
     st.title(" DEEP WINDS ⚒️")
     st.write("Made by Quad Techies with ❤️")
