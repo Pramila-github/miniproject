@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 st.set_page_config(
 page_title=" DEEP WIND ",
 page_icon="🚩",
-page_bg="000a.PNG"
+page_bg='000a.PNG'
 #initial_sidebar_state="expanded",
 )
 old_models = keras.models.load_model('model.h5')
