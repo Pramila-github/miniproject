@@ -31,7 +31,7 @@ def set_png_as_page_bg(png_file):
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
-set_png_as_page_bg('windmill.gif')
+
 
 
 st.set_page_config(
@@ -55,6 +55,7 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     return prediction
 
 def main():
+    set_png_as_page_bg('windmill.gif')
     st.sidebar.header('User Input Parameters 💻️')
     st.title(" DEEP WINDS ⚒️")
     st.write("Made by Quad Techies with ❤️")
