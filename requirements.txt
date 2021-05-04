@@ -2,7 +2,7 @@ pip==21.1.1
 pandas
 streamlit
 keras
-tensorflow
+tensorflow==2.2
 xlrd
 openpyxl
 plotly
