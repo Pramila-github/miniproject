@@ -8,4 +8,4 @@ openpyxl
 plotly
 matplotlib
 sklearn
-base64
+pybase64
