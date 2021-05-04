@@ -47,15 +47,15 @@ def set_png_as_page_bg(png_file):
 
 
 # app setup 
-try:
+#try:
     
     # set bg
-    set_png_as_page_bg('windmill2.gif')
+ #   set_png_as_page_bg('windmill2.gif')
     
     # hide warning for st.pyplot() deprecation
     
-except TypeError:
-     st.error("Oops, something went wrong. Please check previous steps for inconsistent input.")
+#except TypeError:
+ #    st.error("Oops, something went wrong. Please check previous steps for inconsistent input.")
         
 
 
