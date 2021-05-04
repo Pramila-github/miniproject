@@ -1,11 +1,9 @@
-pip==21.1.1
 pandas
 streamlit
 keras
-tensorflow==2.2
+tensorflow
 xlrd
 openpyxl
 plotly
 matplotlib
 sklearn
-numpy
