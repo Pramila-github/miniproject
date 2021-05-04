@@ -5,6 +5,7 @@ import pandas as pd
 import datetime
 import keras
 import plotly.graph_objects as go
+import base64
 
 st.set_page_config(
 page_title=" DEEP WIND ",
