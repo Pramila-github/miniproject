@@ -8,5 +8,3 @@ openpyxl
 plotly
 matplotlib
 sklearn
-pybase64
-base58==2.0.1
