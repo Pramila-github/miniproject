@@ -94,6 +94,7 @@ def main():
     global df
     if uploaded_file is not None:
        print(uploaded_file)
+       st.error('File upload successful')
        print("hello")
 
        try:
