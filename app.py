@@ -276,13 +276,7 @@ def main():
 
 #@app.route('/')
 
-try:    
-    # set bg
-    set_background('000a.PNG')
-    
-    
-except TypeError:
-     st.error("Oops, something went wrong. Please check previous steps for inconsistent input.")
+
 if __name__ == "__main__":
     main()
 
