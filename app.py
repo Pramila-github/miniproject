@@ -15,23 +15,13 @@ page_icon="🚩",
 old_models = keras.models.load_model('model.h5')
 
 
-def get_base64_of_bin_file(bin_file):
-    """
-    function to read png file 
-    ----------
-    bin_file: png -> the background image in local folder
-    """
+def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
-def set_png_as_page_bg(png_file):
-    """
-    function to display png as bg
-    ----------
-    png_file: png -> the background image in local folder
-    """
-    bin_str = get_base64_of_bin_file(png_file)
+def set_background(png_file):
+    bin_str = get_base64(png_file)
     page_bg_img = '''
     <style>
     body {
@@ -41,7 +31,8 @@ def set_png_as_page_bg(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
+
+set_background('000a.PNG')
 
 
 
@@ -57,7 +48,7 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     return prediction
 
 def main():
-    set_png_as_page_bg('000a.PNG')
+    #set_png_as_page_bg('000a.PNG')
     st.sidebar.header('User Input Parameters 💻️')
     st.title(" DEEP WINDS ⚒️")
     st.write("Made by Quad Techies with ❤️")
