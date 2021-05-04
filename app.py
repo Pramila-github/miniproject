@@ -33,9 +33,6 @@ def set_background(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 set_background('000a.PNG')
-
-
-
 def home():
     return "welcome"
 
