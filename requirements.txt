@@ -1,5 +1,5 @@
 pandas
-pip
+pip install --upgrade pip
 streamlit
 keras
 tensorflow
