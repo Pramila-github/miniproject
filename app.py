@@ -50,7 +50,7 @@ def set_png_as_page_bg(png_file):
 try:
     
     # set bg
-    set_png_as_page_bg('grass.jpg')
+    set_png_as_page_bg('gr.gif')
     
     # hide warning for st.pyplot() deprecation
     
