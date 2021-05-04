@@ -9,3 +9,4 @@ plotly
 matplotlib
 sklearn
 base58==2.0.1
+base64
