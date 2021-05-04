@@ -56,7 +56,7 @@ def set_png_as_page_bg(png_file):
 try:
     
     # set bg
-    set_png_as_page_bg('dqw_background.png')
+    set_png_as_page_bg('000a.png')
     
     # hide warning for st.pyplot() deprecation
     
