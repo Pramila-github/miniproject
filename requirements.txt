@@ -7,5 +7,5 @@ xlrd
 openpyxl
 plotly
 matplotlib
-base64
 sklearn
+base58==2.0.1
