@@ -17,10 +17,6 @@ old_models = keras.models.load_model('model.h5')
 
 import base64
 
-
-
-
-
 # set background, use base64 to read local file
 def get_base64_of_bin_file(bin_file):
     """
