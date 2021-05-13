@@ -47,7 +47,7 @@ def set_png_as_page_bg(png_file):
 
 
 
-set_png_as_page_bg(r'C:\Users\PRAMILA\Desktop\New folder\gr.gif')
+set_png_as_page_bg('gr.gif')
      
   
 def home():
@@ -74,7 +74,7 @@ def main():
    
     
    if nav == "User defined Prediction📟":
-     set_png_as_page_bg(r'C:\Users\PRAMILA\Desktop\New folder\gra (1).jpg')
+     set_png_as_page_bg('gra (1).jpg')
      st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
      
  
@@ -93,7 +93,7 @@ def main():
 
 
    if nav == "Forecasting 📊":
-        set_png_as_page_bg(r'C:\Users\PRAMILA\Desktop\New folder\04.gif')
+        set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
        # st.header("⚡FORECASTING⚡")
         
