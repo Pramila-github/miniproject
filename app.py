@@ -8,7 +8,7 @@ import base64
 import time
 
 st.set_page_config(
-page_title=" DEEP WIND ➼",
+page_title=" DEEP WIND ",
 page_icon="🚩",
 #initial_sidebar_state="expanded",
 )
