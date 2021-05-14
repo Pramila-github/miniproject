@@ -2,7 +2,6 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 import datetime
-import tensorflow as tf
 import keras
 import plotly.graph_objects as go
 import base64
