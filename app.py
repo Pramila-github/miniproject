@@ -2,7 +2,7 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 import datetime
-import keras
+import keras as keras
 import plotly.graph_objects as go
 import base64
 import time
