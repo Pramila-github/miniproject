@@ -12,7 +12,7 @@ st.set_page_config(
 page_title=" DEEP WIND ",
 page_icon="🚩"
 )
-old_models = tf.keras.models.load_model('model.h5')
+old_models = keras.models.load_model('model.h5')
 
 
 # set background, use base64 to read local file
@@ -217,9 +217,7 @@ def main():
            plt.legend(loc="upper left")
       #plt.show()
            st.pyplot(plt)
-           
-           
-           
+          
            x_input=test_data[len(test_data)-30:].reshape(1,-1)
            temp_input=list(x_input)
            temp_input=temp_input[0].tolist()
