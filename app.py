@@ -2,7 +2,8 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 import datetime
-import keras as keras
+import tensorflow.compat.v1 as tf
+import keras
 import plotly.graph_objects as go
 import base64
 import time
@@ -11,7 +12,7 @@ st.set_page_config(
 page_title=" DEEP WIND ",
 page_icon="🚩"
 )
-old_models = keras.models.load_model('model.h5')
+old_models = tf.keras.models.load_model('model.h5')
 
 
 # set background, use base64 to read local file
