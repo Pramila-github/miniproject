@@ -1,8 +1,8 @@
 pip
 streamlit==0.73.1
 pandas
-keras
 tensorflow
+keras
 xlrd
 openpyxl
 plotly
