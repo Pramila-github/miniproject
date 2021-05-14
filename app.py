@@ -5,6 +5,7 @@ import datetime
 import plotly.graph_objects as go
 import base64
 import time
+import tensorflow
 
 st.set_page_config(
 page_title=" DEEP WIND ",
@@ -154,7 +155,6 @@ def main():
           
            import numpy
     # convert an array of values into a dataset matrix
-           import numpy
     # convert an array of values into a dataset matrix
            def create_dataset(dataset, time_step=1):
     	       dataX, dataY = [], []
