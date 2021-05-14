@@ -10,7 +10,7 @@ st.set_page_config(
 page_title=" DEEP WIND ",
 page_icon="🚩"
 )
-old_models =from tensorflow.keras.models.load_model('model.h5')
+old_models =tensorflow.keras.models.load_model('model.h5')
 
 
 # set background, use base64 to read local file
