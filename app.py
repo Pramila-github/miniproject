@@ -65,7 +65,7 @@ def main():
    nav = st.sidebar.radio("",["Home 🏡","User defined Prediction📟","Forecasting 📊"])
    if nav == "Home 🏡":
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style=' color:#BB1D3F; text_align:center;font-weight: bold;font-size:19pt;background-color:white'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style=' color:#BB1D3F; text_align:center;font-weight: bold;font-size:19pt;>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='color:green; text_align:center;font-family:times new roman;font-weight: bold;font-size:20pt;'>WIND POWER PREDICTION DL WEB-APP</h1>", unsafe_allow_html=True)
    
     
