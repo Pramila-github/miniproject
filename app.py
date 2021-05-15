@@ -67,7 +67,7 @@ def main():
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='color:green; text_align:center;font-family:times new roman;font-weight: bold;background-color:white;font-size:15pt;'>WIND POWER PREDICTION DL WEB-APP</h1>", unsafe_allow_html=True)
-   
+    st.image('gr.gif')
     
    if nav == "User defined Prediction📟":
      set_png_as_page_bg('gra (1).jpg')
