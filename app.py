@@ -66,7 +66,7 @@ def main():
    if nav == "Home 🏡":
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style ='color:#228B22; text_align:center;font-family:times new roman;font-weight: bold;font-size:18pt;'>WIND POWER PREDICTION DL WEB-APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='color:	#008000; text_align:center;font-family:times new roman;font-weight: bold;font-size:18pt;'>WIND POWER PREDICTION DL WEB-APP</h1>", unsafe_allow_html=True)
    
     
    if nav == "User defined Prediction📟":
