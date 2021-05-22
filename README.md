@@ -1,1 +1,2 @@
-# miniproject
+# DEEP WIND!! 
+WIND POWER PREDICTION DL WEB APP!!!
