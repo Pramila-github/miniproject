@@ -9,7 +9,7 @@ import tensorflow
 from PIL import Image
 img=Image.open('logo.jpg')
 
-st.beta_set_page_config(
+st.set_page_config(
 page_title=" DEEP WIND ",
 page_icon=img
 )
