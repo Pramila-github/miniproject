@@ -9,7 +9,7 @@ import tensorflow
 
 st.set_page_config(
 page_title=" DEEP WIND ",
-page_icon=🚩
+page_icon="🚩"
 )
 old_models =tensorflow.keras.models.load_model('model.h5')
 
