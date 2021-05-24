@@ -7,7 +7,7 @@ import base64
 import time
 import tensorflow
 from PIL import Image
-img=Image.open('https://cdn.dribbble.com/users/1186624/screenshots/4322005/windmill-illustration-3.gif')
+img=Image.open('logo.jpg')
 
 st.set_page_config(
 page_title=" DEEP WIND ",
