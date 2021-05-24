@@ -6,12 +6,10 @@ import plotly.graph_objects as go
 import base64
 import time
 import tensorflow
-from PIL import Image
-img=Image.open('wind0.png')
 
 st.set_page_config(
 page_title=" DEEP WIND ",
-page_icon=img
+page_icon=🚩
 )
 old_models =tensorflow.keras.models.load_model('model.h5')
 
