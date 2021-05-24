@@ -7,7 +7,7 @@ import base64
 import time
 import tensorflow
 from PIL import Image
-img=Image.open('logo1..png')
+img=Image.open('logo1.jpg')
 
 st.set_page_config(
 page_title=" DEEP WIND ",
