@@ -85,7 +85,7 @@ def main():
 
 
    if nav == "Forecasting 📊":
-        set_png_as_page_bg('01.gif')
+        set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
         
     # Setup file upload
