@@ -68,7 +68,7 @@ def main():
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-weight: bold;font-size:16pt;'>🌎 WIND POWER PREDICTION DL WEB-APP 🌎</h1>", unsafe_allow_html=True)
     def Pageviews():
-    return []
+        return []
 
     pageviews=Pageviews()
     pageviews.append('dummy')
