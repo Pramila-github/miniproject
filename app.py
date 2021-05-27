@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import base64
 import time
 import tensorflow
+from database import *
 
 st.set_page_config(
 page_title=" DEEP WIND ",
@@ -13,38 +14,6 @@ page_icon="🚩"
 )
 old_models =tensorflow.keras.models.load_model('model.h5')
 
-import sqlite3 
-conn = sqlite3.connect('data.db')
-c = conn.cursor()
-def create_usertable():
-	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,comments TEXT)')
-
-def add_userdata(username,comments):
-	c.execute('INSERT INTO userstable(username,comments) VALUES (?,?)',(username,comments))
-	conn.commit()
-        
-def login_user(username,comments):
- 	c.execute('SELECT * FROM userstable WHERE username =? AND comments = ?',(username,comments))
- 	data = c.fetchall()
- 	return data
-
-def select_all():
-    c.execute('SELECT * FROM userstable')
-    data1 = c.fetchall()
-    return data1
-
-def create_likestable():
-	c.execute('CREATE TABLE IF NOT EXISTS likestable(counts TEXT)')
-
-def add_likesdata(counts):
-	c.execute('INSERT INTO likestable(counts) VALUES (?)',(counts))
-	conn.commit()
-        
-
-def count_likes():
-    c.execute('SELECT count(*) FROM likestable')
-    data1 = c.fetchall()
-    return data1
 
 # set background, use base64 to read local file
 def get_base64_of_bin_file(bin_file):
