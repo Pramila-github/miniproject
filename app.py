@@ -293,7 +293,7 @@ def main():
            
            st.pyplot(plt)
            st.markdown("<h1 style='text-align: center; color:black ;background-color:yellow;font-size:14pt'>🏷️ G-Given Data, \n🏷️T-Train Data, \n🏷️T-Test Data, \n🏷️P-Predicted Results</h1>", unsafe_allow_html=True)
-           st.write(scaler.inverse_transform(lst_output))
-
+           power=pd.DataFrame(scaler.inverse_transform(lst_output),columns=['Predicted Power(kW)'])
+           st.write(power)
 if __name__ == "__main__":
     main()
