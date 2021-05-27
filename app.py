@@ -117,15 +117,15 @@ def main():
           result=select_all()
           data=pd.DataFrame(result,columns=['UserName','Comments'])
           st.table(data)
-    with st.beta_expander("Like this page💰🏆🎖️!!"):
+    with st.beta_expander("Like this page💰🏆!!"):
         if st.button("❤️"):
            st.success("Thanks for your like 😀!")
            create_likestable()
            add_likesdata('1')
            like=count_likes()
-           like=pd.DataFrame(like,columns=['Total Likes : '])
+           like=pd.DataFrame(like,columns=['Total Likes 🎖️ : '])
            like=like.to_string(index=False) 
-           st.markdown("<h1 style='text-align: left; color: green;font-size:12pt'>{}</h1>".format(like), unsafe_allow_html=True)
+           st.markdown("<h1 style='text-align: left; color: black;font-size:12pt'>{}</h1>".format(like), unsafe_allow_html=True)
                
        
     
