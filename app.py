@@ -13,6 +13,38 @@ page_icon="🚩"
 )
 old_models =tensorflow.keras.models.load_model('model.h5')
 
+import sqlite3 
+conn = sqlite3.connect('data')
+c = conn.cursor()
+def create_usertable():
+	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,comments TEXT)')
+
+def add_userdata(username,comments):
+	c.execute('INSERT INTO userstable(username,comments) VALUES (?,?)',(username,comments))
+	conn.commit()
+        
+def login_user(username,comments):
+ 	c.execute('SELECT * FROM userstable WHERE username =? AND comments = ?',(username,comments))
+ 	data = c.fetchall()
+ 	return data
+
+def select_all():
+    c.execute('SELECT * FROM userstable')
+    data1 = c.fetchall()
+    return data1
+
+def create_likestable():
+	c.execute('CREATE TABLE IF NOT EXISTS likestable(counts TEXT)')
+
+def add_likesdata(counts):
+	c.execute('INSERT INTO likestable(counts) VALUES (?)',(counts))
+	conn.commit()
+        
+
+def count_likes():
+    c.execute('SELECT count(*) FROM likestable')
+    data1 = c.fetchall()
+    return data1
 
 # set background, use base64 to read local file
 def get_base64_of_bin_file(bin_file):
@@ -67,12 +99,37 @@ def main():
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-weight: bold;font-size:16pt;'>🌎 WIND POWER PREDICTION DL WEB-APP 🌎</h1>", unsafe_allow_html=True)
+    with st.beta_expander("Write a review 📝"):
+        col1,col2 = st.beta_columns(2) 
+        with col1:
+            username = st.text_input("Name")
+        with col2:
+            comments= st.text_input("Comments")
+        if st.button("Post ✔️"):
+            if((username is '')and(comments is '')):
+               st.error("Empty field") 
+            else:    
+                create_usertable()
+                add_userdata(username,comments)
+                result = login_user(username,comments)
+                if result:
+                   st.success("Thankyou for your comment {} - with regards Team DeepWind❤️".format(username))
+    with st.beta_expander("View reviews 📝"):
+          result=select_all()
+          data=pd.DataFrame(result,columns=['UserName','Comments'])
+          st.table(data)
+    with st.beta_expander("Like this page✨!!"):
+        if st.button("❤️"):
+           st.success("Thanks for your like 😀!")
+           create_likestable()
+           add_likesdata('1')
+           like=count_likes()
+           like=pd.DataFrame(like,columns=['Total Likes : '])
+           like=like.to_string(index=False) 
+           st.markdown("<h1 style='text-align: left; color: green;font-size:12pt'>{}</h1>".format(like), unsafe_allow_html=True)
+               
+       
     
-    if not s:
-    # Initialize it here!
-       s.counter = 0
-    s.counter += 1
-    st.markdown(f'Page viewed = {s.counter}')
    if nav == "User defined Prediction📟":
      set_png_as_page_bg('gra (1).jpg')
      st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
@@ -86,9 +143,7 @@ def main():
          st.balloons()  
      st.success('Predicted Power is {} kW'.format(result)) 
      
-     
-
-
+        
    if nav == "Forecasting 📊":
         set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
