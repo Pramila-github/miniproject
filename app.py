@@ -14,7 +14,7 @@ page_icon="🚩"
 old_models =tensorflow.keras.models.load_model('model.h5')
 
 import sqlite3 
-conn = sqlite3.connect('data')
+conn = sqlite3.connect('data.db')
 c = conn.cursor()
 def create_usertable():
 	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,comments TEXT)')
