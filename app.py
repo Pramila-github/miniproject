@@ -117,7 +117,7 @@ def main():
           result=select_all()
           data=pd.DataFrame(result,columns=['UserName','Comments'])
           st.table(data)
-    with st.beta_expander("Like this page💰🏆!!"):
+    with st.beta_expander("Like this page💰🏆🎖️!!"):
         if st.button("❤️"):
            st.success("Thanks for your like 😀!")
            create_likestable()
