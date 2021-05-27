@@ -2,19 +2,19 @@ import sqlite3
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
 def create_usertable():
-	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,comments TEXT)')
+	c.execute('CREATE TABLE IF NOT EXISTS usertable(username TEXT,comments TEXT)')
 
 def add_userdata(username,comments):
-	c.execute('INSERT INTO userstable(username,comments) VALUES (?,?)',(username,comments))
+	c.execute('INSERT INTO usertable(username,comments) VALUES (?,?)',(username,comments))
 	conn.commit()
         
 def login_user(username,comments):
- 	c.execute('SELECT * FROM userstable WHERE username =? AND comments = ?',(username,comments))
+ 	c.execute('SELECT * FROM usertable WHERE username =? AND comments = ?',(username,comments))
  	data = c.fetchall()
  	return data
 
 def select_all():
-    c.execute('SELECT * FROM userstable')
+    c.execute('SELECT * FROM usertable')
     data1 = c.fetchall()
     return data1
 
