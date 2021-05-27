@@ -97,7 +97,7 @@ def main():
    if nav == "Home 🏡":
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style ='color:green; text_align:center;font-weight: bold;font-size:17pt;'>🌎 Wind Power Prediction DL Web-App 🌎</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='color:green; text_align:center;font-weight: bold;font-size:18pt;'>🌎 Wind Power Prediction DL Web-App 🌎</h1>", unsafe_allow_html=True)
     with st.beta_expander("Write a review 📝"):
         col1,col2 = st.beta_columns(2) 
         with col1:
@@ -117,7 +117,7 @@ def main():
           result=select_all()
           data=pd.DataFrame(result,columns=['UserName','Comments'])
           st.table(data)
-    with st.beta_expander("Like this page✨!!"):
+    with st.beta_expander("Like this page🎀!!"):
         if st.button("❤️"):
            st.success("Thanks for your like 😀!")
            create_likestable()
