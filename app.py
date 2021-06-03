@@ -120,7 +120,7 @@ def main():
           st.table(data)
     with st.beta_expander("Like this page💰🏆!!"):
         if st.button("❤️"):
-           st.success("Thanks for your like 😀!")
+           #st.success("Thanks for your like 😀!")
 	   st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>Thanks for your like 😀!</h1>", unsafe_allow_html=True)
            create_likestable()
            add_likesdata('1')
