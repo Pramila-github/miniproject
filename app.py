@@ -17,19 +17,19 @@ import sqlite3
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
 def create_usertable():
-	c.execute('CREATE TABLE IF NOT EXISTS commentstable(username TEXT,comments TEXT)')
+	c.execute('CREATE TABLE IF NOT EXISTS commenttable(username TEXT,comments TEXT)')
 
 def add_userdata(username,comments):
-	c.execute('INSERT INTO commentstable(username,comments) VALUES (?,?)',(username,comments))
+	c.execute('INSERT INTO commenttable(username,comments) VALUES (?,?)',(username,comments))
 	conn.commit()
         
 def login_user(username,comments):
- 	c.execute('SELECT * FROM commentstable WHERE username =? AND comments = ?',(username,comments))
+ 	c.execute('SELECT * FROM commenttable WHERE username =? AND comments = ?',(username,comments))
  	data = c.fetchall()
  	return data
 
 def select_all():
-    c.execute('SELECT * FROM commentstable')
+    c.execute('SELECT * FROM commenttable')
     data1 = c.fetchall()
     return data1
 
