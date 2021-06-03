@@ -34,15 +34,15 @@ def select_all():
     return data1
 
 def create_likestable():
-	c.execute('CREATE TABLE IF NOT EXISTS likestable(counts TEXT)')
+	c.execute('CREATE TABLE IF NOT EXISTS likes_table(counts TEXT)')
 
 def add_likesdata(counts):
-	c.execute('INSERT INTO likestable(counts) VALUES (?)',(counts))
+	c.execute('INSERT INTO likes_table(counts) VALUES (?)',(counts))
 	conn.commit()
         
 
 def count_likes():
-    c.execute('SELECT count(*) FROM likestable')
+    c.execute('SELECT count(*) FROM likes_table')
     data1 = c.fetchall()
     return data1
 # set background, use base64 to read local file
