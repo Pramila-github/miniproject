@@ -106,7 +106,7 @@ def main():
             comments= st.text_input("Comments")
         if st.button("Post ✔️"):
             if((username is '')and(comments is '')):
-               st.markdown("<h1 style='text-align: center; font-weight: normal;color:redk;background-color:red;font-size:12pt;border-style: solid;border-color:transparentred;border-radius:4px'> Empty field </h1>".format(username),unsafe_allow_html=True) 
+               st.markdown("<h1 style='text-align: left; font-weight: normal;color:red;background-color:red;font-size:12pt;border-style: solid;border-color:red;border-radius:4px'> Empty field </h1>".format(username),unsafe_allow_html=True) 
             else:    
                 create_usertable()
                 add_userdata(username,comments)
