@@ -119,7 +119,7 @@ def main():
           st.table(data)
     with st.beta_expander("Like this page💰🏆!!"):
         if st.button("❤️"):
-           st.markdown("<h1 style='text-align: center; font-weight: normal;color:DeepPink;background-color:white;font-size:12pt;border-style: solid;border-color:Deeppink;border-radius:6px'> Thanks for your like 😀!</h1>", unsafe_allow_html=True)
+           st.markdown("<h1 style='text-align: center; font-weight: normal;color:DeepPink;background-color:white;font-size:12pt;border-style: solid;border-color:Deeppink;border-radius:6px'> Thanks for your like 🙌😀!</h1>", unsafe_allow_html=True)
            create_likestable()
            add_likesdata('1')
            like=count_likes()
