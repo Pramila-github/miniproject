@@ -113,7 +113,7 @@ def main():
                 result = login_user(username,comments)
                 if result:
 		    #st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'> {} </h1>".format(username), unsafe_allow_html=True)
-                    st.markdown("<h1 style='text-align: center; color:white;background-color: transparent;font-size:12pt;border: 10px solid rgba(0, 0, 0, .4);border-radius: 5px;'> Thankyou for your comment {} - with regards Team DeepWind❤️🎉 </h1>".format(username),unsafe_allow_html=True)
+                    st.markdown("<h1 style='text-align: center; color:white;background-color:transparent;font-size:12pt;border: 10px pink;border-radius: 5px;'> Thankyou for your comment {} - with regards Team DeepWind❤️🎉 </h1>".format(username),unsafe_allow_html=True)
     with st.beta_expander("View reviews 📝"):
           result=select_all()
           data=pd.DataFrame(result,columns=['UserName','Comments'])
