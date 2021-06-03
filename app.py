@@ -112,7 +112,6 @@ def main():
                 add_userdata(username,comments)
                 result = login_user(username,comments)
                 if result:
-		    #st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'> {} </h1>".format(username), unsafe_allow_html=True)
                     st.markdown("<h1 style='text-align: center; font-weight: normal;color:DeepPink;background-color:white;font-size:12pt;border-style: solid;border-color:Deeppink;border-radius:6px'> Thankyou for your comment {} 🎉 - with regards Team DeepWind❤️ </h1>".format(username),unsafe_allow_html=True)
     with st.beta_expander("View reviews 📝"):
           result=select_all()
@@ -121,7 +120,6 @@ def main():
     with st.beta_expander("Like this page💰🏆!!"):
         if st.button("❤️"):
            st.markdown("<h1 style='text-align: center; font-weight: normal;color:DeepPink;background-color:white;font-size:12pt;border-style: solid;border-color:Deeppink;border-radius:6px'> Thanks for your like 😀!</h1>", unsafe_allow_html=True)
-	   #st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>Thanks for your like 😀!</h1>", unsafe_allow_html=True)
            create_likestable()
            add_likesdata('1')
            like=count_likes()
