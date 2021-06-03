@@ -112,8 +112,8 @@ def main():
                 add_userdata(username,comments)
                 result = login_user(username,comments)
                 if result:
-		    st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'> {} </h1>".format(username), unsafe_allow_html=True)
-                    st.success("Thankyou for your comment {} - with regards Team DeepWind❤️".format(username))
+		    #st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'> {} </h1>".format(username), unsafe_allow_html=True)
+                    st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'> Thankyou for your comment {} - with regards Team DeepWind❤️ </h1>".format(username),unsafe_allow_html=True)
     with st.beta_expander("View reviews 📝"):
           result=select_all()
           data=pd.DataFrame(result,columns=['UserName','Comments'])
