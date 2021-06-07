@@ -133,9 +133,24 @@ def main():
    if nav == "User defined Prediction📟":
      set_png_as_page_bg('gra (1).jpg')
      st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
-     temperature = st.slider('Temperature ⛅🌞🌧️ [°C]', -15, 1, 50)
+     st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
+     with st.beta_expander("Preferences"):
+          st.markdown("<h1 style='text-align: left; font-weight:bold;color:black;background-color:white;font-size:11pt;'> Temperature ⛅🌞🌧️ (°C) </h1>",unsafe_allow_html=True)
+          col1,col2 = st.beta_columns(2)         
+          with col1:
+               min_temp=st.number_input('🌡️ Minimum Temperature (°C)',min_value=-89,max_value=55,value=-15,step=1)                         
+          with col2:   
+               max_temp=st.number_input('🌡️ Maximum Temperature (°C)',min_value=-88,max_value=56,value=50,step=1)                         
+          st.markdown("<h1 style='text-align: left; font-weight:bold;color:black;background-color:white;font-size:11pt;'> Wind Speed 🌬️ (m/s) </h1>",unsafe_allow_html=True)
+          col1,col2 = st.beta_columns(2) 
+          with col1:
+               min_speed=st.number_input('🚀 Minimum Wind Speed (m/s)',min_value=0,max_value=99,value=1,step=1)                         
+          with col2:
+               max_speed=st.number_input('🚀 Maximum Wind Speed (m/s)',min_value=2,max_value=100,value=27,step=1)   
+     st.write("")
+     temperature = st.slider('Temperature ⛅🌞🌧️ [°C]', min_value=min_temp, step=1, max_value=max_temp,value=max_temp)
      pressure = st.slider('Pressure  ⚡ [atm]️', 0.9, 1.0, 1.0)
-     wind_speed = st.slider('Wind Speed  🌬️ [m/s]', 1, 1, 27)
+     wind_speed = st.slider('Wind Speed  🌬️ [m/s]', min_value=min_speed, step=1, max_value=max_speed,value=max_speed)
      wind_direction = st.slider('Wind Direction  🚩🌀 [deg]', 0, 1, 360)
      result = ""
      if st.button("Predict"):
