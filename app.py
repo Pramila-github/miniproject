@@ -133,7 +133,6 @@ def main():
    if nav == "User defined Prediction📟":
      set_png_as_page_bg('gra (1).jpg')
      st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
-     st.markdown("<h1 style='text-align: center; color: green;'>User Input Parameters 💻️</h1>", unsafe_allow_html=True)
      with st.beta_expander("Preferences"):
           st.markdown("<h1 style='text-align: left; font-weight:bold;color:black;background-color:white;font-size:11pt;'> Temperature ⛅🌞🌧️ (°C) </h1>",unsafe_allow_html=True)
           col1,col2 = st.beta_columns(2)         
