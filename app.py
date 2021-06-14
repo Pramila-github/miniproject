@@ -330,7 +330,7 @@ def main():
            st.balloons()
            st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>📈 PREDICTED RESULTS FOR NEXT 24 HOURS 📈</h1>", unsafe_allow_html=True)
            plt.plot(day_pred,scaler.inverse_transform(lst_output),color="green",linewidth=1.5, linestyle="--",marker='*',markerfacecolor='yellow', markersize=7)
-           plt.legend('GTTP',loc="upper left")
+           plt.legend('GTTrP',loc="upper left")
            
            plt.xlabel('No. of hours')
     # Set the y axis label of the current axis.
