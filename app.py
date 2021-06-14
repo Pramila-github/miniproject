@@ -249,7 +249,7 @@ def main():
            from tensorflow.keras.layers import LSTM
            from tensorflow.keras.layers import Bidirectional
            model = Sequential()
-           model.add(Bidirectional(LSTM(150, input_shape=(1, 30))))
+           model.add(Bidirectional(LSTM(300, input_shape=(1, 30))))
            model.add(Dense(1))
            model.compile(loss='mae', optimizer='adam')
            model.fit(X_train,y_train,validation_data=(X_test,ytest),epochs=10,batch_size=64,verbose=1)
