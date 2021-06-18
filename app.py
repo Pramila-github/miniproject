@@ -181,7 +181,7 @@ def main():
              st.write(df)
            
            
-           st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>📈 INPUT DATA 📈</h1>", unsafe_allow_html=True)
+           st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>📈 INPUT DATA IN TERMS OF DATE 📈</h1>", unsafe_allow_html=True)
            
            trace = go.Scatter(
         x = df['DateTime'],
