@@ -8,4 +8,5 @@ openpyxl
 plotly
 matplotlib
 sklearn
+os
 
