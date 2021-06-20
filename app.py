@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import base64
 import time
 import tensorflow
-import os
+#import os
 
 st.set_page_config(
 page_title=" DEEP WIND ",
@@ -29,12 +29,7 @@ def login_user(username,comments):
  	data = c.fetchall()
  	return data
 
-def get_binary_file_downloader_html(bin_file, file_label='File'):
-        with open(bin_file, 'rb') as f:
-            data = f.read()           
-        bin_str = base64.b64encode(data).decode()
-        href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
-        return href
+
 
 
 def select_all():
