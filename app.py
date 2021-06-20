@@ -28,6 +28,14 @@ def login_user(username,comments):
  	data = c.fetchall()
  	return data
 
+def get_binary_file_downloader_html(bin_file, file_label='File'):
+        with open(bin_file, 'rb') as f:
+            data = f.read()           
+        bin_str = base64.b64encode(data).decode()
+        href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+        return href
+
+
 def select_all():
     c.execute('SELECT * FROM comments_table')
     data1 = c.fetchall()
@@ -165,6 +173,7 @@ def main():
     # Setup file upload
         st.markdown("<h1 style='text-align:center; color:white;background-color:black;font-size:14pt'>📂 Upload your CSV or Excel file. (200MB max) 📂</h1>", unsafe_allow_html=True)
         uploaded_file = st.file_uploader(label="",type=['csv', 'xlsx'])
+	st.markdown(get_binary_file_downloader_html('SampleData.csv', 'You can download the sample dataset here 👩🏻‍💻!'), unsafe_allow_html=True)  
     
         global df
         if uploaded_file is not None:
