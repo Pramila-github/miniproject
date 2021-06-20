@@ -169,7 +169,7 @@ def main():
    if nav == "Forecasting 📊":
         set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
-        with st.beta_expander("Sample Dataset 📁"):	
+        with st.beta_expander("📁 Sample Dataset 📁"):	
            st.markdown(get_binary_file_downloader_html('SampleData.csv'), unsafe_allow_html=True)  
     # Setup file upload
         st.markdown("<h1 style='text-align:center; color:white;background-color:black;font-size:14pt'>📂 Upload your CSV or Excel file. (200MB max) 📂</h1>", unsafe_allow_html=True)
