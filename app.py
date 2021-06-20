@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import base64
 import time
 import tensorflow
-#import os
+import os
 
 st.set_page_config(
 page_title=" DEEP WIND ",
@@ -28,6 +28,14 @@ def login_user(username,comments):
  	c.execute('SELECT * FROM comments_table WHERE username =? AND comments = ?',(username,comments))
  	data = c.fetchall()
  	return data
+
+def get_binary_file_downloader_html(bin_file, file_label='File'):
+        with open(bin_file, 'rb') as f:
+            data = f.read()           
+        bin_str = base64.b64encode(data).decode()
+        href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+        return href
+
 
 
 
@@ -165,7 +173,7 @@ def main():
    if nav == "Forecasting 📊":
         set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
-        #st.markdown(get_binary_file_downloader_html('SampleData.csv','You can download the sample dataset here 👩🏻‍💻!'), unsafe_allow_html=True)  
+        st.markdown(get_binary_file_downloader_html('SampleData.csv','You can download the sample dataset here 👩🏻‍💻!'), unsafe_allow_html=True)  
     # Setup file upload
         st.markdown("<h1 style='text-align:center; color:white;background-color:black;font-size:14pt'>📂 Upload your CSV or Excel file. (200MB max) 📂</h1>", unsafe_allow_html=True)
         uploaded_file = st.file_uploader(label="",type=['csv', 'xlsx'])
