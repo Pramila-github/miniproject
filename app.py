@@ -36,10 +36,6 @@ def get_binary_file_downloader_html(bin_file):
         href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">You can download the sample dataset here 👩🏻‍💻!</a>'
         return href
 
-
-
-
-
 def select_all():
     c.execute('SELECT * FROM comments_table')
     data1 = c.fetchall()
@@ -173,7 +169,8 @@ def main():
    if nav == "Forecasting 📊":
         set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
-        st.markdown(get_binary_file_downloader_html('SampleData.csv'), unsafe_allow_html=True)  
+        with st.beta_expander("📁 Sample Dataset 📁"):	
+           st.markdown(get_binary_file_downloader_html('SampleData.csv'), unsafe_allow_html=True)  
     # Setup file upload
         st.markdown("<h1 style='text-align:center; color:white;background-color:black;font-size:14pt'>📂 Upload your CSV or Excel file. (200MB max) 📂</h1>", unsafe_allow_html=True)
         uploaded_file = st.file_uploader(label="",type=['csv', 'xlsx'])
