@@ -169,11 +169,11 @@ def main():
    if nav == "Forecasting 📊":
         set_png_as_page_bg('04.gif')
         st.markdown("<h1 style='text-align: center; color:black ;'>⚡FORECASTING⚡</h1>", unsafe_allow_html=True)
-        
+        st.markdown(get_binary_file_downloader_html('SampleData.csv','You can download the sample dataset here 👩🏻‍💻!'), unsafe_allow_html=True)  
     # Setup file upload
         st.markdown("<h1 style='text-align:center; color:white;background-color:black;font-size:14pt'>📂 Upload your CSV or Excel file. (200MB max) 📂</h1>", unsafe_allow_html=True)
         uploaded_file = st.file_uploader(label="",type=['csv', 'xlsx'])
-	st.markdown(get_binary_file_downloader_html('SampleData.csv', 'You can download the sample dataset here 👩🏻‍💻!'), unsafe_allow_html=True)  
+	
     
         global df
         if uploaded_file is not None:
