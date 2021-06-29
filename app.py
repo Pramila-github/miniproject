@@ -163,7 +163,7 @@ def main():
      if st.button("Predict"):
          result = predict(temperature,pressure,wind_speed,wind_direction)
          st.balloons()  
-     st.success('Predicted Power is {} kW'.format("%.2f" % result)) 
+     st.success('Predicted Power is {} kW'.format(result)) 
      
         
    if nav == "Forecasting 📊":
