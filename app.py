@@ -13,7 +13,6 @@ page_title=" DEEP WIND ",
 page_icon="🚩"
 )
 old_models =tensorflow.keras.models.load_model('model.h5')
-
 import sqlite3 
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
