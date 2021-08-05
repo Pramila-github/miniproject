@@ -35,6 +35,3 @@ print(o)
 
 # Saving model to disk
 models=model.save('model.h5')
-
-
-
