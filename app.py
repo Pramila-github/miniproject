@@ -7,6 +7,8 @@ import base64
 import time
 import tensorflow
 import os
+import requests
+from PIL import Image
 
 st.set_page_config(
 page_title=" DEEP WIND ",
@@ -98,9 +100,48 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     print(prediction)
     return prediction
 
+def weather_data(query):
+	res=requests.get('http://api.openweathermap.org/data/2.5/weather?'+query+'&APPID=b35975e18dc93725acb092f7272cc6b8&units=metric');
+	return res.json();
+
+def print_weather(result,city):
+    print("{}'s temperature: {}°C ".format(city,result['main']['temp']))
+    print(result['main']['temp'])
+    print("Wind speed: {} m/s".format(result['wind']['speed']))
+    print("Direction: {}".format(result['wind']['deg']))
+    print("Pressure: {}".format(result['main']['pressure']))
+    print("hi")
+    speed=result['wind']['speed']
+    deg=result['wind']['deg']
+    temp=result['main']['temp']
+    pres=result['main']['pressure']
+    o=predict(temp,pres,speed,deg)
+    col1, col2,col3,col4 = st.beta_columns(4)
+    with col1:        
+        original = Image.open(r"C:\Users\PRAMILA\Downloads\windspeed.png")
+        st.info("Wind Speed: {}".format(speed))
+        st.image(original, use_column_width=30)
+
+    with col2:        
+        original = Image.open(r"C:\Users\PRAMILA\Downloads\winddirection.png")
+        st.info("Wind Direction: {}".format(deg))
+        st.image(original, use_column_width=True)
+        
+    with col3:        
+        original = Image.open(r"C:\Users\PRAMILA\Downloads\temp.jpg")
+        st.info("Air Temperature: {}".format(temp))
+        st.image(original, use_column_width=True)
+    with col4:        
+        original = Image.open(r"C:\Users\PRAMILA\Downloads\pressure.jpg")
+        st.info("Air Pressure: {}".format(pres))
+        st.image(original, use_column_width=True)
+   
+    st.success('Predicted Power is {} kW'.format(o))
+    st.balloons()
+
 def main():
    st.sidebar.markdown("<h1 style='text-align: center; color: black;'>🧭 Navigation Bar 🧭</h1>", unsafe_allow_html=True)
-   nav = st.sidebar.radio("",["Home 🏡","User defined Prediction📟","Forecasting 📊"])
+   nav = st.sidebar.radio("",["Home 🏡","User defined Prediction📟","Forecasting 📊","Dashboard 📌"])
    if nav == "Home 🏡":
     st.markdown("<h1 style ='color:black; text_align:center;font-family:times new roman;font-size:20pt; font-weight: bold;'>DEEP WINDS ⚒️</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style=' color:brown; text_align:center;font-weight: bold;font-size:19pt;'>Made by Quad Techies with ❤️</h1>", unsafe_allow_html=True)
@@ -349,5 +390,18 @@ def main():
            st.markdown("<h1 style='text-align: center; color:black ;background-color:yellow;font-size:14pt'>🏷️ G-Given Data, \n🏷️T-Train Data, \n🏷️t-Test Data, \n🏷️P-Predicted Results</h1>", unsafe_allow_html=True)
            power=pd.DataFrame(scaler.inverse_transform(lst_output),columns=['Predicted Power(kW)'])
            st.write(power)
+   if nav == "Dashboard 📌":    
+    	city=st.text_input('Enter the city:')
+    	print()
+    	try:
+            query='q='+city;
+            w_data=weather_data(query);
+            print_weather(w_data, city)
+                 
+    	except:
+           pass
+           st.warning('City name not found...')
+	
+	
 if __name__ == "__main__":
     main()
