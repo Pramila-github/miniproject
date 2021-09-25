@@ -118,21 +118,21 @@ def print_weather(result,city):
     o=predict(temp,pres,speed,deg)
     col1, col2,col3,col4 = st.beta_columns(4)
     with col1:        
-        original = Image.open(r"C:\Users\PRAMILA\Downloads\windspeed.png")
+        original = Image.open("windspeed.png")
         st.info("Wind Speed: {}".format(speed))
         st.image(original, use_column_width=30)
 
     with col2:        
-        original = Image.open(r"C:\Users\PRAMILA\Downloads\winddirection.png")
+        original = Image.open("winddirection.png")
         st.info("Wind Direction: {}".format(deg))
         st.image(original, use_column_width=True)
         
     with col3:        
-        original = Image.open(r"C:\Users\PRAMILA\Downloads\temp.jpg")
+        original = Image.open("temp.jpg")
         st.info("Air Temperature: {}".format(temp))
         st.image(original, use_column_width=True)
     with col4:        
-        original = Image.open(r"C:\Users\PRAMILA\Downloads\pressure.jpg")
+        original = Image.open("pressure.jpg")
         st.info("Air Pressure: {}".format(pres))
         st.image(original, use_column_width=True)
    
