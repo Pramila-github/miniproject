@@ -392,7 +392,7 @@ def main():
            st.write(power)
 
    if nav == "Dashboard 📌":
-        set_png_as_page_bg('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg')
+        set_png_as_page_bg('')
         city=st.text_input('Enter the city:')
         print()
         try:
