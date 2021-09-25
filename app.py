@@ -196,7 +196,7 @@ def main():
                max_speed=st.number_input('🚀 Maximum Wind Speed (m/s)',min_value=2,max_value=100,value=27,step=1)   
      st.write("")
      temperature = st.slider('Temperature ⛅🌞🌧️ [°C]', min_value=min_temp, step=1, max_value=max_temp,value=max_temp)
-     pressure = st.slider('Pressure  ⚡ [atm]️', 0.9, 1.0, 1.0)
+     pressure = st.slider('Pressure  ⚡ [atm]️',min_value=800,step=1, max_value=1050,value=1050)
      wind_speed = st.slider('Wind Speed  🌬️ [m/s]', min_value=min_speed, step=1, max_value=max_speed,value=max_speed)
      wind_direction = st.slider('Wind Direction  🚩🌀 [deg]', 0, 1, 360)
      result = ""
