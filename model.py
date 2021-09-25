@@ -8,7 +8,7 @@ from keras.layers import Bidirectional
 import pandas as pd
 import keras
 ''' Loading data '''
-df = pd.read_csv(r"C:\Users\PRAMILA\Downloads\Bangaluru_Wind Generation.csv")
+df = pd.read_csv("Bangaluru_Wind Generation.csv")
 #print(df)
 df=df.drop(columns=['Timeseries'])
 ''' Cleaning Data '''
