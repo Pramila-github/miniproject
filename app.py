@@ -390,16 +390,16 @@ def main():
            st.markdown("<h1 style='text-align: center; color:black ;background-color:yellow;font-size:14pt'>🏷️ G-Given Data, \n🏷️T-Train Data, \n🏷️t-Test Data, \n🏷️P-Predicted Results</h1>", unsafe_allow_html=True)
            power=pd.DataFrame(scaler.inverse_transform(lst_output),columns=['Predicted Power(kW)'])
            st.write(power)
-   if nav == "Dashboard 📌":  
-	set_png_as_page_bg('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg')
-    	city=st.text_input('Enter the city:')
-    	print()
-    	try:
+
+   if nav == "Dashboard 📌":
+        set_png_as_page_bg('https://coolbackgrounds.io/images/backgrounds/white/pure-white-background-85a2a7fd.jpg')
+        city=st.text_input('Enter the city:')
+        print()
+        try:
             query='q='+city;
             w_data=weather_data(query);
             print_weather(w_data, city)
-                 
-    	except:
+        except:
            pass
            st.warning('City name not found...')
 	
