@@ -101,8 +101,17 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     return prediction
 
 def weather_data(query):
-	res=requests.get('https://api.openweathermap.org/data/2.5/weather?&query&appid=b272d7a039c01bd5e161926d44ecf9d8&units=metric');
-	return res.json();
+    BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+    # City Name
+    print(query)
+    CITY = query
+    # Your API key
+    API_KEY = 'b272d7a039c01bd5e161926d44ecf9d8'
+    # updating the URL
+    URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY+"&units=metric"
+    print(URL)
+    res=requests.get(URL);
+    return res.json();
 
 def print_weather(result,city):
     print("{}'s temperature: {}°C ".format(city,result['main']['temp']))
