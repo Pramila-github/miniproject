@@ -101,7 +101,7 @@ def predict(temperature,pressure,wind_speed,wind_direction):
     return prediction
 
 def weather_data(query):
-	res=requests.get('http://api.openweathermap.org/data/2.5/weather?'+query+'&APPID=b35975e18dc93725acb092f7272cc6b8&units=metric');
+	res=requests.get('http://api.openweathermap.org/data/2.5/weather?'+query+'&APPID=b272d7a039c01bd5e161926d44ecf9d8&units=metric');
 	return res.json();
 
 def print_weather(result,city):
