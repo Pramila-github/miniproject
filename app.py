@@ -405,7 +405,7 @@ def main():
         city=st.text_input('Enter the city:')
         print()
         try:
-            query='q='+city;
+            query=city;
             w_data=weather_data(query);
             print_weather(w_data, city)
         except:
