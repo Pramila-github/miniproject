@@ -212,7 +212,7 @@ def main():
      relative_humidity = st.slider('Relative Humidity  ☔ [%]', 0, 1, 100)
      result = ""
      if st.button("Predict"):
-         result = predict(temperature,pressure,wind_speed,wind_direction)
+         result = predict(temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity)
          st.balloons()  
      st.success('Predicted Power is {} kW'.format(result)) 
      
