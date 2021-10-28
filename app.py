@@ -94,9 +94,9 @@ def home():
 
 
 #@app.route('/predict', methods=['POST'])
-def predict(temperature,pressure,wind_speed,wind_direction):
-    values=np.array([[temperature,pressure,wind_speed,wind_direction]])
-    prediction=old_models.predict(values.reshape(-1,1,4), batch_size=1)
+def predict(temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity):
+    values=np.array([[temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity]])
+    prediction=old_models.predict(values.reshape(-1,1,6), batch_size=1)
     print(prediction)
     return prediction
 
@@ -208,6 +208,8 @@ def main():
      pressure = st.slider('Pressure  ⚡ [atm]️',min_value=800,step=1, max_value=1050,value=1050)
      wind_speed = st.slider('Wind Speed  🌬️ [m/s]', min_value=min_speed, step=1, max_value=max_speed,value=max_speed)
      wind_direction = st.slider('Wind Direction  🚩🌀 [deg]', 0, 1, 360)
+     dew_point = st.slider('Dew Point  💦 [deg]', float(-360), float(1), float(360))
+     relative_humidity = st.slider('Relative Humidity  ☔ [%]', 0, 1, 100)
      result = ""
      if st.button("Predict"):
          result = predict(temperature,pressure,wind_speed,wind_direction)
