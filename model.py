@@ -19,18 +19,20 @@ df['Power Generated\n(kw)'].fillna(method='ffill', inplace=True)
 
 X = df.drop(columns=['Power Generated\n(kw)'])
 Y = df[['Power Generated\n(kw)']]
-X=np.array(X).reshape(-1,1,4)
+X=np.array(X).reshape(-1,1,6)
 Y=np.array(Y).reshape(-1,1,1)
 
 
-
 model = Sequential()
-model.add(Bidirectional(LSTM(100, activation='relu',input_shape=(-1,1,4))))
+model.add(Bidirectional(LSTM(100, activation='relu',input_shape=(-1,1,6))))
+model.add(Dense(7))
 model.add(Dense(1))
 model.compile(loss='mae', optimizer='adam',metrics=['accuracy'])
-model.fit(X, Y,epochs=1,callbacks=[keras.callbacks.EarlyStopping(patience=3)])
-test_data = np.array([[27.99,1066,2.57,260]])
-o=model.predict(test_data.reshape(-1,1,4), batch_size=1)
+model.fit(X, Y,epochs=1,callbacks=[keras.callbacks.EarlyStopping(patience=5)])
+model.summary()
+test_data = np.array([[17.6,	940.4,4.08,101,8.1,60.1]])
+print(model.predict(test_data.reshape(-1,1,6), batch_size=1))
+o=model.predict(test_data.reshape(-1,1,6), batch_size=1)
 print(o)
 
 # Saving model to disk
