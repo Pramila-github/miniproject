@@ -106,7 +106,7 @@ def weather_data(query):
     print(query)
     CITY = query
     # Your API key
-    API_KEY = '7ef25b4e54a10f899c83ec7feff79ead'
+    API_KEY = 'b9d13fed5ad319786b2a451f5f9c3932'
     # updating the URL
     URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY+"&units=metric"
     print(URL)
