@@ -147,7 +147,7 @@ def print_weather(result,city):
         st.info("Air Pressure: {}".format(pres))
         st.image(original, use_column_width=True)
     with col5:        
-        original = Image.open("pressure.jpg")
+        original = Image.open("humidity.jpg")
         st.info("Relative Humidity: {}".format(rh))
         st.image(original, use_column_width=True)
    
