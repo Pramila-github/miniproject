@@ -119,13 +119,15 @@ def print_weather(result,city):
     print("Wind speed: {} m/s".format(result['wind']['speed']))
     print("Direction: {}".format(result['wind']['deg']))
     print("Pressure: {}".format(result['main']['pressure']))
+    print("Relative Humidity: {}".format(result['main']['humidity']))
     print("hi")
     speed=result['wind']['speed']
     deg=result['wind']['deg']
     temp=result['main']['temp']
     pres=result['main']['pressure']
-    o=predict(temp,pres,speed,deg)
-    col1, col2,col3,col4 = st.beta_columns(4)
+    rh=result['main']['humidity']
+    o=predict(temp,pres,speed,deg,0.0,rh)
+    col1, col2,col3,col4,col5 = st.beta_columns(5)
     with col1:        
         original = Image.open("windspeed.png")
         st.info("Wind Speed: {}".format(speed))
@@ -143,6 +145,10 @@ def print_weather(result,city):
     with col4:        
         original = Image.open("pressure.jpg")
         st.info("Air Pressure: {}".format(pres))
+        st.image(original, use_column_width=True)
+    with col5:        
+        original = Image.open("pressure.jpg")
+        st.info("Relative Humidity: {}".format(rh))
         st.image(original, use_column_width=True)
    
     st.success('Predicted Power is {} kW'.format(o))
