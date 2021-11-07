@@ -415,7 +415,7 @@ def main():
            profit1=avg_power*0.017*24*0.39
            profit1= 74.19*profit1
            st.balloons()
-           st.warning('Day Profit is {} Rupees'.format(round(profit1,2)))
+           st.info('Day Profit is {} Rupees'.format(round(profit1,2)))
 
    if nav == "Dashboard 📌":
         set_png_as_page_bg('white.jpg')
