@@ -221,7 +221,7 @@ def main():
      if st.button("Predict"):
          result = predict(temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity)
          profit=result*0.017*24*365*0.39
-         profit= 74.19*profit
+         profit= int(74.19*profit)
          st.balloons() 
      st.success('Predicted Power is {} kW'.format(result)) 
      st.warning('Annual Profit is {} Rupees'.format(round(profit,2))) 
