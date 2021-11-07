@@ -219,8 +219,11 @@ def main():
      result = ""
      if st.button("Predict"):
          result = predict(temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity)
+	 profit=result*0.017*24*365*0.39
+         profit= 74.19*profit
          st.balloons()  
      st.success('Predicted Power is {} kW'.format(result)) 
+     st.warning('Annual Profit is {} Rupees'.format(round(profit,2))) 
      
         
    if nav == "Forecasting 📊":
@@ -407,6 +410,12 @@ def main():
            st.markdown("<h1 style='text-align: center; color:black ;background-color:yellow;font-size:14pt'>🏷️ G-Given Data, \n🏷️T-Train Data, \n🏷️t-Test Data, \n🏷️P-Predicted Results</h1>", unsafe_allow_html=True)
            power=pd.DataFrame(scaler.inverse_transform(lst_output),columns=['Predicted Power(kW)'])
            st.write(power)
+           avg_power=power.sum()
+           avg_power = int(avg_power/24)
+           profit1=avg_power*0.017*24*0.39
+           profit1= 74.19*profit1
+           st.balloons()
+           st.warning('Day Profit is {} Rupees'.format(round(profit1,2)))
 
    if nav == "Dashboard 📌":
         set_png_as_page_bg('white.jpg')
