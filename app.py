@@ -416,7 +416,7 @@ def main():
            profit1=avg_power*0.017*24*0.39
            profit1= 74.19*profit1
            st.balloons()
-	   st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>Day Profit is {} Rupees</h1>", unsafe_allow_html=True,format(round(profit1,2))
+           st.markdown("<h1 style='text-align: center; color:black ;background-color:powderblue;font-size:14pt'>Day Profit is {} Rupees</h1>", unsafe_allow_html=True,format(round(profit1,2))	   
            st.warning('Day Profit is {} Rupees'.format(round(profit1,2)))
 
    if nav == "Dashboard 📌":
