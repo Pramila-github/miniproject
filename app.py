@@ -217,7 +217,7 @@ def main():
      dew_point = st.slider('Dew Point  💦 [deg]', float(-360), float(1), float(360))
      relative_humidity = st.slider('Relative Humidity  ☔ [%]', 0, 1, 100)
      result = ""
-     profit=""
+     profit=0
      if st.button("Predict"):
          result = predict(temperature,pressure,wind_speed,wind_direction,dew_point,relative_humidity)
          profit=result*0.017*24*365*0.39
