@@ -223,7 +223,7 @@ def main():
          profit=result*0.017*24*365*0.39
          profit= int(74.19*profit)
          st.balloons() 
-     st.success('Predicted Power is {} kW'.format(result)) 
+     st.success('Predicted Power is {} kW'.format(round(result.item(0),3))) 
      st.warning('Annual Profit is {} Rupees'.format(round(profit,2))) 
      
         
