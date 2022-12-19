@@ -151,7 +151,7 @@ def print_weather(result,city):
         st.info("Relative Humidity: {}".format(rh))
         st.image(original, use_column_width=True)
    
-    st.success('Predicted Power is {} kW'.format(o[0]))
+    st.success('Predicted Power is {} kW'.format(o.item(0))
     st.balloons()
 
 def main():
