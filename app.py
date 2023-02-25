@@ -9,6 +9,10 @@ import tensorflow
 import os
 import requests
 from PIL import Image
+from scipy.integrate import simps
+import scipy.stats as sst
+from matplotlib.mlab import psd
+
 
 st.set_page_config(
 page_title=" DEEP WIND ",
